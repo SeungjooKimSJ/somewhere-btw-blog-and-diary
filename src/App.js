@@ -13,6 +13,9 @@ function App() {
         <h2>Diary Blog</h2>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/new' element={<New />} />
+          <Route path='/edit' element={<Edit />} />
+          <Route path='/diary' element={<Diary />} />
         </Routes>
       </div>
     </BrowserRouter>
