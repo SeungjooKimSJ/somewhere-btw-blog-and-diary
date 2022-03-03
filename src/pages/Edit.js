@@ -31,6 +31,6 @@ const Edit = () => {
       </button>
     </div>
   );
-};
+}
 
 export default Edit;

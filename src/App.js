@@ -6,17 +6,29 @@ import New from './pages/New';
 import Edit from './pages/Edit';
 import Diary from './pages/Diary'
 
+//components
+import Button from './components/Button';
+
 function App() {
   return (
     <BrowserRouter>
       <div className='App'>
         <h2>Diary Blog</h2>
 
-        <img src={process.env.PUBLIC_URL + './assets/emotion1.png'} />
-        <img src={process.env.PUBLIC_URL + './assets/emotion2.png'} />
-        <img src={process.env.PUBLIC_URL + './assets/emotion3.png'} />
-        <img src={process.env.PUBLIC_URL + './assets/emotion4.png'} />
-        <img src={process.env.PUBLIC_URL + './assets/emotion5.png'} />
+        <Button
+          text={'button'}
+          onClick={() => alert('You clicked button')}
+          type={'positive'}
+        />
+        <Button
+          text={'button'}
+          onClick={() => alert('You clicked button')}
+          type={'negative'}
+        />
+        <Button
+          text={'button'}
+          onClick={() => alert('You clicked button')}
+        />
 
         <Routes>
           <Route path='/' element={<Home />} />
