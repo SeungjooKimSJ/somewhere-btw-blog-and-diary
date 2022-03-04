@@ -3,7 +3,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nanum Pen Script';
+  font-family: 'Nanum Pen Script', cursive;
   min-height: 100vh;
   margin: 0px;
 }
@@ -25,7 +25,7 @@ body {
   padding: 10px 20px;
   font-size: 18px;
   white-space: nowrap;
-  font-family: 'Nanum Pen Script';
+  font-family: 'Nanum Pen Script', cursive;
 }
 
 .Button_default {
@@ -42,6 +42,43 @@ body {
   background-color: #fd565f;
   color: #fff;
 }
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text {
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .head_btn_left {
+  justify-content: start;
+}
+
+header .head_btn_right {
+  justify-content: end;
+}
+
+header .head_btn_left,
+header .head_btn_right {
+  width: 25%;
+}
+
+header button {
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+/* media query */
 
 @media (min-width: 650px) {
   .App {
