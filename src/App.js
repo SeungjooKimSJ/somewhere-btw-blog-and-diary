@@ -25,6 +25,12 @@ const reducer = (state, action) => {
       newState = state.filter((it) => it.id !== action.targetId);
       break;
     }
+    case 'EDIT': {
+      newState = state.map((it) =>
+        it.id === action.data.id ? { ...action.data } : it
+      );
+      break;
+    }
     default:
       return state;
   }
