@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useRef } from 'react';
 
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -15,10 +15,7 @@ const reducer = (state, action) => {
       return action.data;
     }
     case 'CREATE': {
-      const newItem = {
-        ...action.data
-      };
-      newState = [newItem, ...state];
+      newState = [action.data, ...state];
       break;
     }
     case 'REMOVE': {
@@ -39,6 +36,37 @@ const reducer = (state, action) => {
 
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
+
+  const dataId = useRef(0);
+
+  const onCreate = (date, content, emotion) => {
+    dispatch({
+      type: 'CREATE',
+      data: {
+        id: dataId.current,
+        date: new Date(date).getTime(),
+        content,
+        emotion
+      },
+    });
+    dataId.current += 1;
+  }
+
+  const onRemove = (targetId) => {
+    dispatch({
+      type: "REMOVE",
+      targetId
+    });
+  }
+
+  const onEdit = (targetId, date, content, emotion) => {
+    dispatch({
+      type: "EDIT",
+      data: new Date(date).getTime(),
+      content,
+      emotion
+    });
+  }
 
   return (
     <BrowserRouter>
