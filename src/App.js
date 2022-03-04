@@ -1,3 +1,5 @@
+import { useReducer } from 'react';
+
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -6,46 +8,35 @@ import New from './pages/New';
 import Edit from './pages/Edit';
 import Diary from './pages/Diary'
 
-//components
-import Button from './components/Button';
-import Header from './components/Header';
+const reducer = (state, action) => {
+  let newState = [];
+  switch(action.type) {
+    case 'INIT': {
+      return action.data;
+    }
+    case 'CREATE': {
+      const newItem = {
+        ...action.data
+      };
+      newState = [newItem, ...state];
+      break;
+    }
+    case 'REMOVE': {
+      newState = state.filter((it) => it.id !== action.targetId);
+      break;
+    }
+    default:
+      return state;
+  }
+  return newState;
+}
 
 function App() {
+  const [data, dispatch] = useReducer(reducer, []);
+
   return (
     <BrowserRouter>
       <div className='App'>
-        <Header
-          headText={'App'}
-          leftChild={
-            <Button
-              text={'left btn'}
-              onClick={() => alert('You clicked left btn')}
-            />
-          }
-          rightChild={
-            <Button
-              text={'right btn'}
-              onClick={() => alert('You clicked right btn')}
-            />
-          }
-        />
-        <h2>Diary Blog</h2>
-
-        <Button
-          text={'button'}
-          onClick={() => alert('You clicked button')}
-          type={'positive'}
-        />
-        <Button
-          text={'button'}
-          onClick={() => alert('You clicked button')}
-          type={'negative'}
-        />
-        <Button
-          text={'button'}
-          onClick={() => alert('You clicked button')}
-        />
-
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/new' element={<New />} />
