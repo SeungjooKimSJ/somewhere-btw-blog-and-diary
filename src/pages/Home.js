@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Header from './../components/Header';
+import Button from './../components/Button';
 
 const Home = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -10,7 +11,11 @@ const Home = () => {
 
   return (
     <div>
-      <Header headText={headText} />
+      <Header
+        headText={headText}
+        leftChild={<Button text={'<'} onClick={() => {}} />}
+        rightChild={<Button text={'>'} onClick={() => {}} />}
+      />
     </div>
   );
 };
