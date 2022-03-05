@@ -9,7 +9,22 @@ const sortOptionList = [
     value: 'oldest',
     name: 'oldest'
   }
-]
+];
+
+const filterOptionList = [
+  {
+    value: 'all',
+    name: 'show all'
+  },
+  {
+    value: 'good',
+    name: 'only good moods'
+  },
+  {
+    value: 'bad',
+    name: 'only bad moods'
+  }
+];
 
 const ControlMenu = ({value, onChange, optionList}) => {
   return (
@@ -25,6 +40,7 @@ const ControlMenu = ({value, onChange, optionList}) => {
 
 const DiaryList = ({ diaryList }) => {
   const [sortType, setSortType] = useState('lastest');
+  const [filter, setFilter] = useState('all');
 
   const getProcessedDiaryList = () => {
     const compare = (a, b) => {
@@ -47,9 +63,14 @@ const DiaryList = ({ diaryList }) => {
         onChange={setSortType}
         optionList={sortOptionList}
       />
+      <ControlMenu
+        value={filter}
+        onChange={setFilter}
+        optionList={filterOptionList}
+      />
       {getProcessedDiaryList().map((it) => (
         <div key={it.id}>
-          {it.content}
+          {it.content} {it.emotion}
         </div>
       ))}
     </div>
