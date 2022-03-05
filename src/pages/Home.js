@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
 
 import Header from './../components/Header';
@@ -7,8 +7,34 @@ import Button from './../components/Button';
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
 
+  const [data, setData] = useState([]);
   const [currentDate, setCurrentDate] = useState(new Date());
   const headText = `${currentDate.getFullYear()}. ${currentDate.getMonth() + 1}.`
+
+  useEffect(() => {
+    if (diaryList.length >= 1) {
+      const firstDay = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        1
+      ).getTime();
+
+      const lastDay = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        0
+      ).getTime();
+
+      setData(
+        diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay)
+      );
+    }
+  }, [diaryList, currentDate]);
+
+
+  useEffect(() => {
+    console.log(data);
+  }, [data])
 
   const increaseMonth = () => {
     setCurrentDate(
