@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DiaryStateContext } from "../App";
 
 import Header from './../components/Header';
 import Button from './../components/Button';
 
 const Home = () => {
+  const diaryList = useContext(DiaryStateContext);
+
   const [currentDate, setCurrentDate] = useState(new Date());
   const headText = `${currentDate.getFullYear()}. ${currentDate.getMonth() + 1}.`
 
