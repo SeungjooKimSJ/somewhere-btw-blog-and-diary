@@ -1,18 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
-import Header from "../components/Header";
+import DiaryEditor from "../components/DiaryEditor";
+
+const getStrDate = (date) => {
+  return date.toISOString().slice(0, 10);
+}
 
 const New = () => {
-  const navigate = useNavigate();
-
   return (
     <div>
-      <Header
-        headText={'Write a new diary'}
-        leftChild={
-          <Button text={'< back'} onClick={() => navigate(-1)} />
-        }
-      />
+      <DiaryEditor />
     </div>
   );
 };
