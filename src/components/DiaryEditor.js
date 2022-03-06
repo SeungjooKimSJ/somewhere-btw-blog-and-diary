@@ -14,7 +14,7 @@ const DiaryEditor = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="DiaryEditor">
       <Header
         headText={'Write a new diary'}
         leftChild={
@@ -24,9 +24,9 @@ const DiaryEditor = () => {
       <div>
         <section>
           <h4>What date is it today?</h4>
-          <div className="input-box">
+          <div className="input_box">
             <input
-              className=""
+              className="input_date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
               type='date'
