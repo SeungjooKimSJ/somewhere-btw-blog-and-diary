@@ -92,6 +92,19 @@ const DiaryEditor = () => {
             />
           </div>
         </section>
+        <section>
+          <div className="control_box">
+            <Button
+              text={'Cancel'}
+              onClick={() => navigate(-1)}
+            />
+            <Button
+              text={'Save'}
+              type={'positive'}
+              onClick={() => {}}
+            />
+          </div>
+        </section>
       </div>
     </div>
   );
