@@ -38,7 +38,12 @@ const getStrDate = (date) => {
 }
 
 const DiaryEditor = () => {
+  const [emotion, setEmotion] = useState(3);
   const [date, setDate] = useState(getStrDate(new Date()));
+
+  const handleClickEmotion = (emotion) => {
+    setEmotion(emotion);
+  }
 
   const navigate = useNavigate();
 
@@ -66,7 +71,11 @@ const DiaryEditor = () => {
           <h4>Today's Feeling</h4>
           <div className="input_box emotion_list_container">
             {emotionList.map((it) => (
-              <EmotionItem key={it.emotion_id} {...it} />
+              <EmotionItem
+                key={it.emotion_id} {...it}
+                onClick={handleClickEmotion}
+                isSelected={it.emotion_id === emotion}
+              />
             ))}
           </div>
         </section>
