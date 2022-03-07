@@ -38,19 +38,19 @@ const getStrDate = (date) => {
   return date.toISOString().slice(0, 10);
 }
 
-const DiaryEditor = ({isEdit, originData}) => {
+const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();
   const [content, setContent] = useState('');
   const [emotion, setEmotion] = useState(3);
   const [date, setDate] = useState(getStrDate(new Date()));
 
-  const {onCreate} = useContext(DiaryDispatchContext);
-
-  const navigate = useNavigate();
+  const { onCreate, onEdit } = useContext(DiaryDispatchContext);
 
   const handleClickEmotion = (emotion) => {
     setEmotion(emotion);
   }
+
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     if (content.length < 1) {
@@ -58,7 +58,18 @@ const DiaryEditor = ({isEdit, originData}) => {
       return;
     }
 
-    onCreate(date, content, emotion);
+    if (
+      window.confirm(
+        isEdit ? 'Do you want to edit your diary?' : 'Do you want to write a new diary?'
+      )
+    ) {
+      if (!isEdit) {
+        onCreate(date, content, emotion);
+      } else {
+        onEdit(originData.id, date, content, emotion);
+      }
+    }
+
     navigate('/', { replace: true });
   };
 

@@ -98,9 +98,12 @@ function App() {
   const onEdit = (targetId, date, content, emotion) => {
     dispatch({
       type: "EDIT",
-      data: new Date(date).getTime(),
-      content,
-      emotion
+      data: {
+        id: targetId,
+        date: new Date(date).getTime(),
+        content,
+        emotion
+      },
     });
   }
 
