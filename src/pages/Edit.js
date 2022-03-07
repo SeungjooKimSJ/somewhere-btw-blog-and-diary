@@ -1,34 +1,17 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { DiaryStateContext } from "../App";
 
 const Edit = () => {
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { id } = useParams();
 
-  const id = searchParams.get('id');
-  console.log('id: ', id);
-
-  const mode = searchParams.get('mode');
-  console.log('mode: ', mode);
+  const diaryList = useContext(DiaryStateContext);
+  console.log(diaryList);
 
   return (
     <div>
-      <h1>Edit</h1>
-      <p>This is Edit page.</p>
-      <button onClick={() => setSearchParams({who: 'sj'})}>
-        Checking Query String
-      </button>
-
-      <button onClick={() => {
-        navigate('/home');
-      }}>
-        Go back to Home
-      </button>
-
-      <button onClick={() => {
-        navigate(-1);
-      }}>
-        Back btn
-      </button>
+      <h2>Edit</h2>
     </div>
   );
 }
