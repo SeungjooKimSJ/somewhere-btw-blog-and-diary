@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "./Header";
@@ -38,6 +38,8 @@ const getStrDate = (date) => {
 }
 
 const DiaryEditor = () => {
+  const contentRef = useRef();
+  const [content, setContent] = useState('');
   const [emotion, setEmotion] = useState(3);
   const [date, setDate] = useState(getStrDate(new Date()));
 
@@ -77,6 +79,17 @@ const DiaryEditor = () => {
                 isSelected={it.emotion_id === emotion}
               />
             ))}
+          </div>
+        </section>
+        <section>
+          <h4>Today's diary</h4>
+          <div className="input_box text_container">
+            <textarea
+              placeholder="How was your day"
+              ref={contentRef}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+            />
           </div>
         </section>
       </div>
