@@ -104,7 +104,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
           <h4>Today's diary</h4>
           <div className="input_box text_container">
             <textarea
-              placeholder="How was your day"
+              placeholder="How was your day?"
               ref={contentRef}
               value={content}
               onChange={(e) => setContent(e.target.value)}

@@ -83,8 +83,10 @@ function App() {
       );
       dataId.current = parseInt(diaryList[0].id) + 1;
 
-      console.log(diaryList);
-      console.log(dataId);
+      dispatch({
+        type: 'INIT',
+        data: diaryList
+      });
     }
   }, []);
 
