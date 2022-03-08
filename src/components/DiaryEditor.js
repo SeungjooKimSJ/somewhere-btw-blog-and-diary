@@ -1,40 +1,13 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DiaryDispatchContext } from './../App'
+import { DiaryDispatchContext } from "./../App";
 
 import Header from "./Header";
 import Button from "./Button";
 import EmotionItem from "./EmotionItem";
 
-import { getStrDate } from '../lib/date';
-
-const emotionList = [
-  {
-    emotion_id: 1,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion1.png`,
-    emotion_descript: 'Fantastic'
-  },
-  {
-    emotion_id: 2,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion2.png`,
-    emotion_descript: 'Good'
-  },
-  {
-    emotion_id: 3,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion3.png`,
-    emotion_descript: 'So So'
-  },
-  {
-    emotion_id: 4,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion4.png`,
-    emotion_descript: 'Bad'
-  },
-  {
-    emotion_id: 5,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion5.png`,
-    emotion_descript: 'Terrible'
-  }
-];
+import { getStrDate } from "../lib/date";
+import { emotionList } from "../lib/emotion";
 
 const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();

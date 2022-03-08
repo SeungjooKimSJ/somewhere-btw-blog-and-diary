@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
+
 import Button from "../components/Button";
 import Header from "../components/Header";
-import { getStrDate } from '../lib/date';
+
+import { getStrDate } from "../lib/date";
+import { emotionList } from "../lib/emotion";
 
 const Diary = () => {
   const { id } = useParams();
@@ -33,6 +36,11 @@ const Diary = () => {
       </div>
     );
   } else {
+    const currentEmotionData = emotionList.find(
+      (it) => parseInt(it.emotion_id) === parseInt(data.emotion)
+    );
+    console.log(currentEmotionData);
+
     return (
       <div className="DiaryPage">
         <Header
