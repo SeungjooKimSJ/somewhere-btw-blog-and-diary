@@ -84,7 +84,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
       <Header
         headText={isEdit ? 'Edit Diary' : 'Write a New Diary'}
         leftChild={
-          <Button text={'< back'} onClick={() => navigate(-1)} />
+          <Button text={'< Back'} onClick={() => navigate(-1)} />
         }
       />
       <div>

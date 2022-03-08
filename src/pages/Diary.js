@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
+import Button from "../components/Button";
 import Header from "../components/Header";
 import { getStrDate } from '../lib/date';
 
@@ -34,7 +35,21 @@ const Diary = () => {
   } else {
     return (
       <div className="DiaryPage">
-        <Header headText={`A diary of ${getStrDate(new Date(data.date))}`} />
+        <Header
+          headText={`A Diary of ${getStrDate(new Date(data.date))}`}
+          leftChild={
+            <Button
+              text={'< Back'}
+              onClick={() => navigate(-1)}
+            />
+          }
+          rightChild={
+            <Button
+              text={'Edit'}
+              onClick={() => navigate(`/edit/${data.id}`)}
+            />
+          }
+        />
       </div>
     );
   }

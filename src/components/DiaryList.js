@@ -6,26 +6,26 @@ import DiaryItem from "./DiaryItem";
 const sortOptionList = [
   {
     value: 'latest',
-    name: 'latest'
+    name: 'Latest'
   },
   {
     value: 'oldest',
-    name: 'oldest'
+    name: 'Oldest'
   }
 ];
 
 const filterOptionList = [
   {
     value: 'all',
-    name: 'show all'
+    name: 'Show all'
   },
   {
     value: 'good',
-    name: 'only good moods'
+    name: 'Only good moods'
   },
   {
     value: 'bad',
-    name: 'only bad moods'
+    name: 'Only bad moods'
   }
 ];
 
