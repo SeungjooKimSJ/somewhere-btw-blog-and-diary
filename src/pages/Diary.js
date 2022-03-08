@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
+import Header from "../components/Header";
+import { getStrDate } from '../lib/date';
 
 const Diary = () => {
   const { id } = useParams();
@@ -23,12 +25,19 @@ const Diary = () => {
     }
   }, [id, diaryList]);
 
-  return (
-    <div>
-      <h1>Diary</h1>
-      <p>This is Diary page.</p>
-    </div>
-  );
+  if (!data) {
+    return (
+      <div className="DiaryPage">
+        Loading...
+      </div>
+    );
+  } else {
+    return (
+      <div className="DiaryPage">
+        <Header headText={`A diary of ${getStrDate(new Date(data.date))}`} />
+      </div>
+    );
+  }
 };
 
 export default Diary;

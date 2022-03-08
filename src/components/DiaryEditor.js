@@ -6,6 +6,8 @@ import Header from "./Header";
 import Button from "./Button";
 import EmotionItem from "./EmotionItem";
 
+import { getStrDate } from '../lib/date';
+
 const emotionList = [
   {
     emotion_id: 1,
@@ -33,10 +35,6 @@ const emotionList = [
     emotion_descript: 'Terrible'
   }
 ];
-
-const getStrDate = (date) => {
-  return date.toISOString().slice(0, 10);
-}
 
 const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();
