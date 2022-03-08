@@ -39,7 +39,6 @@ const Diary = () => {
     const currentEmotionData = emotionList.find(
       (it) => parseInt(it.emotion_id) === parseInt(data.emotion)
     );
-    console.log(currentEmotionData);
 
     return (
       <div className="DiaryPage">
