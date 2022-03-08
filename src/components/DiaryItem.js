@@ -30,7 +30,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
           {strDate}
         </div>
         <div className="diary_content_preview">
-          {content.slice(0, 25)}
+          {content.slice(0, 30)}
         </div>
       </div>
       <div className="btn_container">
