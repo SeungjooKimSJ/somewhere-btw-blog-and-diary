@@ -19,6 +19,7 @@ const Edit = () => {
         if (targetDiary) {
           setOriginData(targetDiary);
         } else {
+          alert('This diary does not exist.');
           navigate('/', {replace: true});
         }
     }
