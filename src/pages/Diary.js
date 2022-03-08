@@ -1,17 +1,25 @@
-import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 
 const Diary = () => {
   const { id } = useParams();
   const diaryList = useContext(DiaryStateContext);
+  const navigate = useNavigate();
+  const [data, setData] = useState();
 
   useEffect(() => {
     if (diaryList.length >= 1) {
       const targetDiary = diaryList.find(
         (it) => parseInt(it.id) === parseInt(id)
       );
-      console.log(targetDiary);
+
+      if (targetDiary) {
+        setData(targetDiary);
+      } else {
+        alert('This diary does not exist.');
+        navigate('/', {replace: true});
+      }
     }
   }, [id, diaryList]);
 
