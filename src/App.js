@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from 'react';
+import React, { useEffect, useReducer, useRef } from 'react';
 
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -31,47 +31,49 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+
+  localStorage.setItem('diary', JSON.stringify(newState));
   return newState;
 }
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-const dummyData = [
-  {
-    id: 1,
-    emotion: 1,
-    content: 'this is first diary',
-    date: 1646439781354
-  },
-  {
-    id: 2,
-    emotion: 2,
-    content: 'this is second diary',
-    date: 1646439781355
-  },
-  {
-    id: 3,
-    emotion: 3,
-    content: 'this is third diary',
-    date: 1646439781356
-  },
-  {
-    id: 4,
-    emotion: 4,
-    content: 'this is fourth diary',
-    date: 1646439781357
-  },
-  {
-    id: 5,
-    emotion: 5,
-    content: 'this is fifth diary',
-    date: 1646439781358
-  }
-];
+// const dummyData = [
+//   {
+//     id: 1,
+//     emotion: 1,
+//     content: 'this is the first diary',
+//     date: 1646708252007
+//   },
+//   {
+//     id: 2,
+//     emotion: 2,
+//     content: 'this is the second diary',
+//     date: 1646708252008
+//   },
+//   {
+//     id: 3,
+//     emotion: 3,
+//     content: 'this is the third diary',
+//     date: 1646708252009
+//   },
+//   {
+//     id: 4,
+//     emotion: 4,
+//     content: 'this is the fourth diary',
+//     date: 1646708252010
+//   },
+//   {
+//     id: 5,
+//     emotion: 5,
+//     content: 'this is the fifth diary',
+//     date: 1646708252011
+//   }
+// ];
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, dummyData);
+  const [data, dispatch] = useReducer(reducer, []);
 
   const dataId = useRef(6);
 
@@ -86,14 +88,14 @@ function App() {
       },
     });
     dataId.current += 1;
-  }
+  };
 
   const onRemove = (targetId) => {
     dispatch({
       type: "REMOVE",
       targetId
     });
-  }
+  };
 
   const onEdit = (targetId, date, content, emotion) => {
     dispatch({
@@ -105,7 +107,7 @@ function App() {
         emotion
       },
     });
-  }
+  };
 
   return (
     <DiaryStateContext.Provider value={data}>

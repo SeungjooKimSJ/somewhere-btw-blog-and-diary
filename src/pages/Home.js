@@ -23,19 +23,19 @@ const Home = () => {
       const lastDay = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth() + 1,
-        0
+        0,
+        23,
+        59,
+        59
       ).getTime();
 
       setData(
-        diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay)
+        diaryList.filter(
+          (it) => firstDay <= it.date && it.date <= lastDay
+        )
       );
     }
   }, [diaryList, currentDate]);
-
-
-  useEffect(() => {
-    console.log(data);
-  }, [data])
 
   const increaseMonth = () => {
     setCurrentDate(
