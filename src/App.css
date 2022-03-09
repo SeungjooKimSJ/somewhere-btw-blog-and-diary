@@ -206,7 +206,7 @@ header button {
 
 .DiaryEditor .emotion_list_container {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2%;
 }
 
