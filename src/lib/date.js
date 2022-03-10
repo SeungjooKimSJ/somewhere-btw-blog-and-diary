@@ -1,7 +1,3 @@
-// export const getStrDate = (date) => {
-//   return date.toISOString().slice(0, 10);
-// };
-
 export const getStrDate = (date) => {
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -15,4 +11,14 @@ export const getStrDate = (date) => {
   }
 
   return `${year}-${month}-${day}`;
+};
+
+export const convertStrToDate = (dateString) => {
+  const dateSplited = dateString.split("-");
+
+  const year = Number(dateSplited[0]);
+  const month = Number(dateSplited[1]) - 1;
+  const date = Number(dateSplited[2]);
+
+  return new Date(year, month, date);
 };

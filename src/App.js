@@ -3,6 +3,8 @@ import React, { useEffect, useReducer, useRef } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { convertStrToDate } from './lib/date';
+
 import Home from './pages/Home';
 import New from './pages/New';
 import Edit from './pages/Edit';
@@ -100,7 +102,7 @@ function App() {
       type: 'CREATE',
       data: {
         id: dataId.current,
-        date: new Date(date).getTime(),
+        date: convertStrToDate(date).getTime(),
         content,
         emotion
       },
@@ -120,7 +122,7 @@ function App() {
       type: "EDIT",
       data: {
         id: targetId,
-        date: new Date(date).getTime(),
+        date: convertStrToDate(date).getTime(),
         content,
         emotion
       },
