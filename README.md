@@ -1,6 +1,8 @@
 # somewhere-btw-blog-and-diary
 A Front-end JavaScript and React-based web application that allows users to write, save, delete, and preview diaries.
+
 This can be used for blogs or diaries, and recorded diaries can be sorted using the latest and oldest order, and also emotional filtering. 
+
 The stored data manages in localStorage.
 
 # Technologies Used
