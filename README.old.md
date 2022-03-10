@@ -1,1 +1,0 @@
-# somewhere-btw-blog-and-diary
