@@ -22,7 +22,11 @@ https://somewhere-btw-blog-and-diary.netlify.app/
 6. User can store diary history.
 
 # Images
-![image](https://user-images.githubusercontent.com/68725614/134992655-8e7250c4-eefb-4c96-886a-e79186534c1f.png)
-
 ![image](https://user-images.githubusercontent.com/68725614/157575038-ae566eb8-c225-41eb-bf66-048e9872e79c.png)
-)
+
+![image](https://user-images.githubusercontent.com/68725614/157575207-e01c4663-4ea2-4513-a8b9-420c4e085f31.png)
+
+![image](https://user-images.githubusercontent.com/68725614/157575259-538f7beb-3cb4-4685-8fed-1ebb66bfe0df.png)
+
+![image](https://user-images.githubusercontent.com/68725614/157575333-df85fe56-bdd2-4222-852e-c5d6b97511ea.png)
+
