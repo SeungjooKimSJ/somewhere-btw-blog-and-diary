@@ -24,5 +24,5 @@ https://somewhere-btw-blog-and-diary.netlify.app/
 # Images
 ![image](https://user-images.githubusercontent.com/68725614/134992655-8e7250c4-eefb-4c96-886a-e79186534c1f.png)
 
-![image](![sample_1](https://user-images.githubusercontent.com/68725614/157575038-ae566eb8-c225-41eb-bf66-048e9872e79c.png)
+![image](https://user-images.githubusercontent.com/68725614/157575038-ae566eb8-c225-41eb-bf66-048e9872e79c.png)
 )
