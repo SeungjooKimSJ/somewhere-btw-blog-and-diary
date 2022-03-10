@@ -12,7 +12,7 @@ export const emotionList = [
   {
     emotion_id: 3,
     emotion_img: process.env.PUBLIC_URL + `/assets/emotion3.png`,
-    emotion_descript: 'So So'
+    emotion_descript: 'So-so'
   },
   {
     emotion_id: 4,
