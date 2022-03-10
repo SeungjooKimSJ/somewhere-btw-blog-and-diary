@@ -7,6 +7,7 @@ The stored data manages in localStorage.
 * React.js
 * Node.js
 * npm
+* JavaScript
 * HTML5
 * CSS3
 
