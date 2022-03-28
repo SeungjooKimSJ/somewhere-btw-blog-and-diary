@@ -1,8 +1,8 @@
 # somewhere-btw-blog-and-diary
 A Front-end JavaScript and React-based web application that allows users to write, save, delete, and preview diaries.
 
-I heard it is a good habit for developers to write blogs. 
-I started to create this app based on this idea.
+I heard it is a good habit for developers to write blogs. <br />
+I started to create this app based on this idea. <br />
 Users can use this app for writing blogs or diaries purposes, and I use it as a notebook for writing what I've learned.
 
 The recorded diaries can be sorted using the latest and oldest order, and also emotional filtering.
